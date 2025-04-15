@@ -1,99 +1,165 @@
-/* Reset geral para remover margens e paddings padrões */
+/* 
+   RESET BÁSICO 
+   Remove margens e paddings padrões de todos os elementos e define box-sizing 
+   para que padding e border não afetem a largura/altura total dos elementos
+*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove todas as margens padrão */
+  padding: 0; /* Remove todos os paddings padrão */
+  box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho do elemento */
 }
 
-/* Estilo geral do corpo da página */
+/* 
+   ESTILOS GERAIS DO CORPO (BODY) 
+   Centraliza todo o conteúdo na tela usando flexbox
+*/
 body {
-  display: flex; /* Centraliza com flexbox */
-  justify-content: center; /* Alinha horizontalmente */
-  align-items: center; /* Alinha verticalmente */
-  flex-direction: column; /* Itens empilhados verticalmente */
-  height: 100vh; /* Ocupa 100% da altura da tela */
-  width: 100vw; /* Ocupa 100% da largura da tela */
-  font-family: sans-serif; /* Fonte limpa e moderna */
+  display: flex; /* Ativa o modelo de layout flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  flex-direction: column; /* Disposição em coluna (um item abaixo do outro) */
+  height: 100vh; /* Altura igual a 100% da viewport (tela visível) */
+  width: 100vw; /* Largura igual a 100% da viewport */
+  font-family: sans-serif; /* Define uma fonte sem serifa (limpa e moderna) */
 }
 
-/* Container principal da aplicação */
+/* 
+   CONTAINER PRINCIPAL 
+   Define o estilo da caixa principal que contém toda a aplicação
+*/
 .container {
-  display: flex;
-  flex-direction: column; /* Empilha os elementos verticalmente */
+  display: flex; /* Ativa flexbox para os elementos internos */
+  flex-direction: column; /* Organiza os filhos em coluna */
   border-radius: 6px; /* Bordas arredondadas */
-  min-width: 300px; /* Largura mínima */
-  max-width: 90vw; /* Responsivo para telas menores */
-  background-color: #ccc; /* Fundo branco */
-  padding: 20px; /* Espaço interno */
-  border: 1px solid #ccc; /* Borda cinza clara */
+  min-width: 300px; /* Largura mínima para evitar que fique muito estreito */
+  max-width: 90vw; /* Largura máxima de 90% da viewport (responsivo para mobile) */
+  background-color: #ccc; /* Cor de fundo cinza claro */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda sutil */
 }
 
-/* Campo de input para digitar o nome da dívida */
+/* 
+   ESTILO DOS INPUTS 
+   Aplica estilo consistente a todos os campos de entrada
+*/
 .input {
-  flex: 1;
-  height: 40px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  flex: 1; /* Ocupa todo o espaço disponível no container pai */
+  height: 40px; /* Altura fixa */
+  padding: 8px; /* Espaçamento interno para o texto não colar nas bordas */
+  border: 1px solid #ccc; /* Borda sutil */
+  border-radius: 6px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho de fonte legível */
 }
 
-/* Botão de adicionar */
+/* 
+   BOTÃO DE ADICIONAR 
+   Estilo do botão principal da aplicação
+*/
 .buttonAddName {
-  height: 40px;
-  padding-inline: 16px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background-color: #212121; /* Cor escura */
-  color: white;
+  height: 40px; /* Mesma altura dos inputs para uniformidade */
+  padding-inline: 16px; /* Padding horizontal (esquerda/direita) */
+  font-size: 14px; /* Tamanho de fonte */
+  border-radius: 6px; /* Bordas arredondadas */
+  border: none; /* Remove borda padrão */
+  cursor: pointer; /* Muda cursor para pointer (mãozinha) ao passar por cima */
+  background-color: #212121; /* Cor de fundo escura */
+  color: white; /* Texto branco para contraste */
 }
+
+/* 
+   ÁREA DO NOME DA DÍVIDA 
+   Estilo da div que mostra o nome da dívida na lista
+*/
 .nameDebts {
-  min-height: 30px;
+  min-height: 30px; /* Altura mínima para manter consistência */
 }
+
+/* 
+   ÁREA DO VALOR (NÃO UTILIZADA NO SEU CÓDIGO ATUAL) 
+   Estilo de exemplo para uma área de valor
+*/
 .areaValue {
-  background-color: aqua;
-  min-height: 30px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  background-color: aqua; /* Cor de fundo apenas para visualização */
+  min-height: 30px; /* Altura mínima */
+  border: 1px solid #ccc; /* Borda sutil */
+  border-radius: 6px; /* Bordas arredondadas */
 }
 
-/* Área de input e botão lado a lado com espaçamento */
+/* 
+   CONTAINER DOS INPUTS 
+   Organiza os campos de entrada e botão na parte superior
+*/
 .containerInput {
-  display: flex;
-  gap: 16px; /* Espaço entre o input e o botão */
-  margin-bottom: 24px; /* Espaço abaixo da barra de entrada */
-  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  display: flex; /* Ativa flexbox para alinhar itens horizontalmente */
+  gap: 16px; /* Espaço entre os elementos filhos */
+  margin-bottom: 24px; /* Espaço abaixo do container */
+  flex-wrap: wrap; /* Permite que os itens quebrem para linha seguinte em telas pequenas */
 }
 
-/* Lista das dívidas */
+/* 
+   LISTA DE DÍVIDAS 
+   Container principal da lista de itens
+*/
 .listDebts {
-  display: flex;
-  flex-direction: column; /* Empilha os itens */
-  gap: 8px;
-  width: 100%;
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Itens em coluna (um abaixo do outro) */
+  gap: 8px; /* Espaço entre os itens da lista */
+  width: 100%; /* Ocupa 100% da largura disponível */
 }
 
-/* Cada item da lista */
+/* 
+   ITEM DA LISTA (DÍVIDA) 
+   Estilo de cada item individual da lista
+*/
 .typedResult {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f8f9fa;
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  margin: 5px 0;
+  display: flex; /* Ativa flexbox para organizar os elementos internos */
+  align-items: center; /* Centraliza verticalmente os itens */
+  background: #f8f9fa; /* Cor de fundo sutil */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 6px; /* Bordas arredondadas */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para efeito de profundidade */
+  width: 100%; /* Ocupa toda a largura */
+  margin: 5px 0; /* Margem superior e inferior */
 }
 
-/* Botão de remover (lixeira) */
-.remove {
-  cursor: pointer;
-  padding: 4px;
-  border: none;
-  color: white;
-  /* Adicionado cor para destaque */
-  border-radius: 4px;
+/* 
+   CHECKBOX - POSICIONADO À ESQUERDA 
+   Estilização do checkbox de marcação de dívida paga
+*/
+.typedResult input[type="checkbox"] {
+  order: 1; /* Define a ordem de exibição como primeiro elemento */
+  margin-right: 10px; /* Espaço à direita para separar do próximo elemento */
+}
+
+/* 
+   BOTÃO DE REMOVER (LIXEIRA) - POSICIONADO À DIREITA 
+   Estilo do botão para remover itens
+*/
+.typedResult .remove {
+  order: 4; /* Define a ordem de exibição como último elemento */
+  cursor: pointer; /* Muda cursor para pointer (mãozinha) */
+  padding: 4px; /* Espaçamento interno */
+  border: none; /* Remove borda padrão */
+  color: white; /* Cor do texto */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  margin-left: auto; /* Empurra o elemento para a direita (alinhamento à direita) */
+}
+
+/* 
+   NOME DA DÍVIDA - POSICIONADO NO MEIO 
+   Estilo do texto do nome da dívida
+*/
+.typedResult .nameDebts {
+  order: 2; /* Define a ordem de exibição como segundo elemento */
+  flex-grow: 1; /* Faz o elemento crescer para ocupar todo espaço disponível */
+  margin: 0 10px; /* Margem horizontal para separar dos elementos vizinhos */
+  margin-top: 10px;
+}
+
+/* 
+   VALOR DA DÍVIDA - POSICIONADO NO MEIO 
+   Estilo do texto do valor da dívida
+*/
+.typedResult .valueDebts {
+  order: 3; /* Define a ordem de exibição como terceiro elemento */
 }
