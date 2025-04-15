@@ -1,0 +1,99 @@
+/* Reset geral para remover margens e paddings padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  display: flex; /* Centraliza com flexbox */
+  justify-content: center; /* Alinha horizontalmente */
+  align-items: center; /* Alinha verticalmente */
+  flex-direction: column; /* Itens empilhados verticalmente */
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  width: 100vw; /* Ocupa 100% da largura da tela */
+  font-family: sans-serif; /* Fonte limpa e moderna */
+}
+
+/* Container principal da aplicação */
+.container {
+  display: flex;
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  border-radius: 6px; /* Bordas arredondadas */
+  min-width: 300px; /* Largura mínima */
+  max-width: 90vw; /* Responsivo para telas menores */
+  background-color: #ccc; /* Fundo branco */
+  padding: 20px; /* Espaço interno */
+  border: 1px solid #ccc; /* Borda cinza clara */
+}
+
+/* Campo de input para digitar o nome da dívida */
+.input {
+  flex: 1;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Botão de adicionar */
+.buttonAddName {
+  height: 40px;
+  padding-inline: 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #212121; /* Cor escura */
+  color: white;
+}
+.nameDebts {
+  min-height: 30px;
+}
+.areaValue {
+  background-color: aqua;
+  min-height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Área de input e botão lado a lado com espaçamento */
+.containerInput {
+  display: flex;
+  gap: 16px; /* Espaço entre o input e o botão */
+  margin-bottom: 24px; /* Espaço abaixo da barra de entrada */
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+}
+
+/* Lista das dívidas */
+.listDebts {
+  display: flex;
+  flex-direction: column; /* Empilha os itens */
+  gap: 8px;
+  width: 100%;
+}
+
+/* Cada item da lista */
+.typedResult {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* Botão de remover (lixeira) */
+.remove {
+  cursor: pointer;
+  padding: 4px;
+  border: none;
+  color: white;
+  /* Adicionado cor para destaque */
+  border-radius: 4px;
+}

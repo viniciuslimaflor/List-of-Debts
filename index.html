@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista of Debts</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="item">
+      <div class="container">
+        <!-- Inputs -->
+        <div class="containerInput">
+          <input type="text" class="input" id="nameThisDebts" placeholder="Nome da dívida" />
+          <input type="number" class="input" id="valueThisDebts" placeholder="Valor da dívida" />
+          <button class="buttonAddName" onclick="addOnList()">Adicionar</button>
+        </div>
+
+        <!-- Lista de dívidas -->
+        <div class="listDebts" id="listDebts"></div>
+
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
